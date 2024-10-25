@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     # External Apps
     'rest_framework',
     'rest_framework.authtoken',
-    'rest_framework_simple_jwt',
+    'rest_framework_simplejwt',
     'corsheaders',
     'djoser',
     # Internal Apps
@@ -177,3 +177,13 @@ DJOSER = {
         'user_delete': 'djoser.serializers.UserDeleteSerializer',
         },
 }
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = env('EMAIL_HOST')
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+EMAIL_PORT = env('EMAIL_PORT')
+DEFAULT_FROM_EMAIL = 'info@joblisting.com'
+DOMAIN =env('DOMAIN')
+SITE_NAME = 'Job Listing'
